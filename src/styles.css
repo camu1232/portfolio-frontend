@@ -1,0 +1,84 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de colores */
+:root {
+  --primary-color: #00afb9;
+  --secondary-color: #fdfcdc;
+  --terciary-color: #0a001b;
+  --quaternary-color: #0081a7;
+  --quinary-color: #fed9b7;
+  --senary-color: #f07167;
+  --text-color: #333333;
+}
+
+/* Body y fuente */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: var(--quaternary-color);
+  color: var(--text-color);
+}
+
+/* Links dentro del nav (menu) */
+nav ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--senary-color);
+}
+
+/* Imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--senary-color);
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 2px solid var(--senary-color);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Botones */
+button {
+  background-color: var(--senary-color);
+  border: none;
+  padding: 12px;
+  color: var(--text-color);
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive: ajustes generales para pantallas pequeñas */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
