@@ -10,11 +10,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,7 +18,7 @@ function Header() {
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <h1 className={`logo ${scrolled ? "small" : ""}`}>Camila Orts</h1>
+      <h1 className={`logo ${scrolled ? "small" : ""}`}>CO</h1>
 
       <button
         className={`menu-btn ${menuOpen ? "open" : ""}`}
@@ -34,27 +30,35 @@ function Header() {
         <span></span>
       </button>
 
-      <nav className={menuOpen ? "nav-open" : ""}>
+      <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
         <ul>
           <li>
             <Link to="/" onClick={() => setMenuOpen(false)}>
+             Inicio
+           </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
               Sobre mí
             </Link>
           </li>
           <li>
-            <Link to="/proyectos" onClick={() => setMenuOpen(false)}>
+            <Link to="/projects" onClick={() => setMenuOpen(false)}>
               Proyectos
             </Link>
           </li>
           <li>
-            <Link to="/contacto" onClick={() => setMenuOpen(false)}>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>
               Contacto
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> 
     </header>
   );
 }
 
 export default Header;
+
+
+

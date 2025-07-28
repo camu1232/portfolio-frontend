@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +22,7 @@ body {
   line-height: 1.6;
   background: var(--quaternary-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 /* Links dentro del nav (menu) */
@@ -41,6 +42,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  margin-top: -80px;
 }
 
 /* Formulario */
@@ -75,10 +77,95 @@ button {
   transition: background-color 0.3s ease;
 }
 
+
+
+.dark-mode-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  background-color: var(--quinary-color); 
+  border: none;
+  border-radius: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+  color: #fff;
+}
+
+.dark-mode-btn:hover {
+  background-color: #eab98b; 
+  transform: scale(1.1);
+}
+
+/* Modo oscuro */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Adaptar header y logo en modo oscuro (ajustar según tu CSS) */
+body.dark .header {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark nav {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark .logo {
+  color: #f0f0f0;
+}
+
+/* Botón modo oscuro en modo oscuro */
+body.dark .dark-mode-btn {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark .dark-mode-btn:hover {
+  background-color: #666;
+}
+
 /* Responsive: ajustes generales para pantallas pequeñas */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
     gap: 10px;
   }
+  .dark-mode-btn {
+    padding: 0.5rem;     
+    font-size: 0.9rem; 
+    bottom: 1rem;        
+    right: 1rem;
+  }
+
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 100px 20px;
+}
+
+.texto-inicio {
+  position: relative;
+  top: -100px;
+  left: 10px;
+  right: -10px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--terciary-color);
+  background-color: var(--quinary-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: end;
+
+}
+

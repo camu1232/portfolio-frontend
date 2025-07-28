@@ -1,0 +1,112 @@
+.contact-section {
+  display: flex;
+  margin: 80px auto;
+  justify-content: space-between;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--quinary-color), #ffe6f0);
+  color: var(--text-color);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(255, 0, 77, 0.15);
+  max-width: 1000px;
+  gap: 3rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-left h2 {
+  font-size: 2.2rem;
+  color: var(--senary-color);
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.contact-left h2::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background: var(--senary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.contact-left a {
+  color: var(--senary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-left a:hover {
+  text-decoration: underline;
+  color: #cc0033;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid var(--senary-color);
+  border-radius: 8px;
+  background-color: #fff8f2;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #cc0033;
+  box-shadow: 0 0 8px rgba(204, 0, 51, 0.4);
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  background: linear-gradient(135deg, var(--senary-color), #cc0033);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #cc0033, var(--senary-color));
+}
+
+.success-msg {
+  margin-top: 1rem;
+  color: #cc0033;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

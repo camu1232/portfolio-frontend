@@ -3,23 +3,27 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--quaternary-color);
   color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
 .header h1 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--terciary-color);
+  color: var(--secondary-color);
 }
 
-/* Menú de navegación */
+nav {
+  display: flex;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -28,16 +32,17 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: var(--terciary-color);
+  color: var(--secondary-color);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
-/* Botón hamburguesa */
+   /* BOTÓN */
+
 .menu-btn {
   background: none;
   border: none;
@@ -54,12 +59,11 @@ nav ul li a:hover {
 .menu-btn span {
   display: block;
   height: 3px;
-  background: var(--terciary-color);
+  background: var(--secondary-color);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* animación de la X */
 .menu-btn.open span:nth-child(1) {
   transform: rotate(45deg) translate(4px, 4px);
 }
@@ -72,7 +76,8 @@ nav ul li a:hover {
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-/* Menú móvil */
+   /* VERSIÓN CELULAR */
+
 @media (max-width: 600px) {
   .menu-btn {
     display: flex;
@@ -83,13 +88,14 @@ nav ul li a:hover {
     top: 56px;
     left: 0;
     width: 100%;
-    background-color: var(--secondary-color);
+    background-color: var(--quaternary-color);
     text-align: center;
     display: none;
+    flex-direction: column;
   }
 
   nav.nav-open {
-    display: block;
+    display: flex;
   }
 
   nav ul {
@@ -97,22 +103,21 @@ nav ul li a:hover {
     gap: 10px;
     padding: 10px 0;
   }
-}
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+  nav ul li a {
+    display: block;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    margin: 0 auto;
+    width: 80%;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background: #29c0c8;
+  }
 }
 
 .header.scrolled {
@@ -125,7 +130,7 @@ nav ul li a:hover {
 .header h1.logo {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--terciary-color);
+  color: var(--secondary-color);
   transition: font-size 0.3s ease, color 0.3s ease;
 }
 
@@ -134,5 +139,5 @@ nav ul li a:hover {
   color: var(--secondary-color);
 }
 
-/* resto del CSS (menú hamburguesa, nav, etc.) igual que antes */
+
 
